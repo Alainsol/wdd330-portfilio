@@ -1,56 +1,58 @@
-//Auth class which provides basic JWT based authentication for our app.
-// Requires: access to the makeRequest  functions
-import { makeRequest } from './authHelpers.js';
-export default class Auth {
-  constructor() {
-    this.jwtToken = '';
-    this.user = {};
-  }
+import Auth from './Auth.js';
+import { Errors, makeRequest } from './authHelpers.js';
+// makeRequest('login', 'POST', {
+//   password: 'user1',
+//   email: 'user1@email.com'
+// });
 
-  async login(callback) {
-    // replace the ids below with whatever you used in your form.
-    const password = document.getElementById('password');
-    const username = document.getElementById('username');
-    const postData = {
-      email: username.value,
-      password: password.value  
+const myErrors = new Errors('errors');
+const myAuth = new Auth(myErrors);
+
+const loginForm = document.getElementById('login');
+loginForm.querySelector('button').addEventListener('click', () => {
+  myAuth.login(getPosts);
+});
+async function getPosts() {
+  try {
+    const data = await makeRequest('posts', 'GET', null, myAuth.token);
+    // make sure the element is shown
+    document.getElementById('content').classList.remove('hidden');
+    console.log(data);
+    var ul = document.getElementById('list');
+    ul.innerHTML = '';
+    for (var i = 0; i < data.length; i++) {
+      var li = document.createElement('li');
+      li.appendChild(document.createTextNode(data[i].title));
+      ul.appendChild(li);
+    }
+    myErrors.clearError();
+  } catch (error) {
+    // if there were any errors display them
+    myErrors.handleError(error);
+  }
+}
+document.getElementById('createSubmit').addEventListener('click', () => {
+  createPost();
+});
+async function createPost() {
+  const form = document.forms.postForm;
+  console.dir(form);
+  if (form.title.validity.valid && form.content.validity.valid) {
+    myErrors.clearError();
+    const data = {
+      title: form.title.value,
+      content: form.content.value
     };
     try {
-      // 1. use the makeRequest function to pass our credentials to the server
-      
-      // 2. if we get a successful response...we have a token!  Store it since we will need to send it with every request to the API.
-      
-      // let's get the user details as well and store them locally in the class
-      // you can pass a query to the API by appending it on the end of the url like this: 'users?email=' + email
-      this.user = await this.getCurrentUser(username.value);
-      // hide the login form.
-      document.getElementById('login').classList.add('hidden');
-      // clear the password
-      password.value = '';
-      
-      // since we have a token let's go grab some data from the API by executing the callback if one was passed in
-      if(callback) {
-        callback();
-      }
+      const res = await makeRequest('posts', 'POST', data, myAuth.token);
+      console.log('Post create:', data);
+      form.title.value = '';
+      form.content.value = '';
+      getPosts();
     } catch (error) {
-      // if there were any errors display them
-      console.log(error);
+      myErrors.handleError(error);
     }
-  }
-  // uses the email of the currently logged in user to pull up the full user details for that user from the database
-  async getCurrentUser(email) {
-    try {
-      // 3. add the code here to make a request for the user identified by email...don't forget to send the token!
-    } catch (error) {
-      // if there were any errors display them
-      console.log(error);
-    }
-  }
-  
-  set token(value) {
-    // we need this for the getter to work...but we don't want to allow setting the token through this.
-  }
-  get token() {
-    return this.jwtToken;
+  } else {
+    myErrors.displayError({ message: 'Title and Content are required' });
   }
 }
