@@ -17,8 +17,12 @@ export default class Auth {
     };
     try {
       // 1. use the makeRequest function to pass our credentials to the server
+
+      const authResponse = await makeRequest('login', 'POST', postData);
       
       // 2. if we get a successful response...we have a token!  Store it since we will need to send it with every request to the API.
+
+      this.jwtToken = authResponse.accessToken;
       
       // let's get the user details as well and store them locally in the class
       // you can pass a query to the API by appending it on the end of the url like this: 'users?email=' + email
@@ -49,6 +53,7 @@ export default class Auth {
   
   set token(value) {
     // we need this for the getter to work...but we don't want to allow setting the token through this.
+    this.jwtToken = value;
   }
   get token() {
     return this.jwtToken;

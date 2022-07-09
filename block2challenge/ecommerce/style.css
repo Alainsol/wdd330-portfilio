@@ -1,0 +1,144 @@
+
+  body {
+  
+  position: relative;
+  padding-bottom: 170px;
+  min-height: 100vh;
+  }
+  
+  
+  .grid-container {
+    margin:50px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+  }
+  
+  .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgb(235, 235, 235);
+    text-align: center;
+    font-size: 30px;
+  }
+  img{
+    width: 300px;
+    transition: transform .75s;
+  }
+  h1{
+    text-align: center;
+    font-size: 25px;
+    
+  }
+  .price{
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .description{
+    text-align: center;
+    font-size: 17px;
+  }
+  button{
+    background-color:#ff6666;
+    color: #fff;
+    padding: 8px;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  button:hover{
+    background-color: white;
+    border: 1px solid #ff6666 ;
+    color:#ff6666;
+
+  }
+  .products-header{
+    margin-left: 80px;
+    margin-right: 80px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid rgb(218, 217, 217);
+    margin-top: 20px;
+    
+  }
+  #icon {
+   font-size: 25px;
+   color: rgb(20, 46, 194);
+   
+   margin-right: 40px;
+   cursor: pointer;
+  }
+  
+  .product{
+    border-bottom: 1px solid rgb(218, 217, 217);
+    margin-top: 20px;
+    align-items: center;
+    display: flex;
+    margin-left: 80px;
+    margin-right: 80px;
+    
+  
+  }
+  .product > img{
+      width: 80px;
+  }
+  .name{
+    text-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .price1{
+  
+    font-size: 17px;
+    text-align: center;
+    text-indent: 220px;
+    font-weight: 400;
+  }
+  #iconPlus{
+    padding-left:320px; 
+    padding-right: 15px;
+    cursor: pointer;
+    color: black;
+  }
+  
+  .q_div{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  #iconMinus{
+    padding-left: 15px;
+    cursor: pointer;
+  }
+  .total{
+    padding-left: 270px;
+  }
+  .Price1{
+    padding-left: 330px;
+  }
+  .Quantity{
+    padding-left: 310px;
+  }
+  .btc{
+    display: flex;
+    justify-content: flex-end;
+    width: 95%;
+    padding: 10px 0;
+  }
+  .btt{
+    width: 15%;
+    font-weight: 500;
+    font-size: 20px;
+  }
+  .bt{
+    font-weight: 500;
+    font-size: 20px;
+  }
+  .headd{
+    font-size: 30px;
+    font-weight: 600;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
+  }
+ 
