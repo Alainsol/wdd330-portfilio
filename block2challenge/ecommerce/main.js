@@ -1,184 +1,57 @@
 
 
 let carts = document.querySelectorAll('.add-to-car');
-
-let products = [
-    {
-        id: 1,
-        name: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-        tag:"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-        price: 109.95,
-        inCart:0,
-        img: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-        
-        },
-    { 
-        id: 2,
-        name: "Mens Casual Premium Slim Fit T-Shirts ",
-        tag:"Mens Casual Premium Slim Fit T-Shirts",
-        price: 22.3,
-        inCart:0,
-        img: "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
-    },
-    {
-        id: 3,
-        name: "Mens Cotton Jacket",
-        tag:"Mens Cotton Jacket",
-        price: 55.99,
-        inCart:0,
-        img: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
-    },
-    {
-        id: 4,
-        name: "Mens Casual Slim Fit",
-        tag:"Mens Casual Slim Fit",
-        price: 15.99,
-       inCart:0,
-        img: "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
-
-    },
-    {
-        id: 5,
-        name: "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
-        tag:"John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
-        price: 695,
-       inCart:0,
-        img: "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
-    },
-    {
-        id: 6,
-        name: "Solid Gold Petite Micropave ",
-        tag:"Solid Gold Petite Micropave ",
-        price: 168,
-        inCart:0,
-        img: "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg"
-    },
-    {
-        id: 7,
-        name: "White Gold Plated Princess",
-        tag:"White Gold Plated Princess",
-        price: 9.99,
-        inCart:0,
-        img: "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
-
-    },
-    {
-        id: 8,
-        name: "Pierced Owl Rose Gold Plated Stainless Steel Double",
-        tag:"Pierced Owl Rose Gold Plated Stainless Steel Double",
-        price: 10.99,
-        inCart:0,
-        img: "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
-        
-
-    },
-    {
-        id: 9,
-        name: "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
-        price: 64,
-     inCart:0,   
-     img: "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
-        
-        },
-        {
-        id: 10,
-        name: "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
-        price: 109,
-    inCart:0,   
-     img: "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
-        
-        },
-        {
-        id: 11,
-        name: "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
-        price: 109,
-    inCart:0,   
-     img: "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
-        
-        },
-        {
-        id: 12,
-        name: "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
-        price: 114,
-    inCart:0,   
-     img: "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
-        
-        },
-        {
-        id: 13,
-        name: "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
-        price: 599,
-        description: "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
-        category: "electronics",
-    
-    inCart:0,  
-      img: "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
-        
-        },
-        {
-        id: 14,
-        name: "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
-        price: 999.99,
-       inCart:0,   
-     img: "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
-        
-        },
-        {
-        id: 15,
-        name: "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
-        price: 56.99,
-        inCart:0,
-        img: "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
-        
-        },
-        {
-        id: 16,
-        name: "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
-        price: 29.95,
-        inCart:0,
-        img: "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
-        
-        },
-        {
-        id: 17,
-        name: "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
-        price: 39.99,
-        inCart:0,
-        img: "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
-        
-        },
-        {
-        id: 18,
-        name: "MBJ Women's Solid Short Sleeve Boat Neck V ",
-        price: 9.85,
-        inCart:0,
-        img: "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
-        
-        },
-        {
-        id: 19,
-        name: "Opna Women's Short Sleeve Moisture",
-        price: 7.95,
-        inCart:0,
-        img: "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
-        
-        },
-        {
-        id: 20,
-        name: "DANVOUY Womens T Shirt Casual Cotton Short",
-        price: 12.99,
-        inCart:0,
-        img: "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
-        
+fetch('https://fakestoreapi.com/products')
+    .then(res => res.json())
+    .then((data => {
+        let products = data;
+        displayFeaturedProducts(products);
+        displayBestSellingProducts(products);
+        for (let i =0; i< carts.length; i++){
+            carts[i].addEventListener('click', () => {
+                cartNumbers(products[i]);
+                totalCost(products[i]);
+            })
         }
-] 
+    }));
 
-for (let i =0; i< carts.length; i++){
-    carts[i].addEventListener('click', () => {
-        cartNumbers(products[i]);
-        totalCost(products[i]);
-    })
+function displayFeaturedProducts(products)
+{
+    let featuredProducts = document.getElementById('featured-products');
+    for (let i =0; i< 12; i++) {
+        let product = products[i];
+        featuredProducts.innerHTML += `
+        <div id="${product.id}">
+     <img style="width: 150px;" src="${product.image}" alt="hoodie" >
+     <h4>${product.title}</h4>
+     <p class="price">$${product.price}</p>
+     <p class="button"><button class="add-to-car" onclick="myFunction()" >Click to buy</button></p>
+    </div>
+        `;
+    }
+    
 }
+
+//aa-client-brand-slider slick-initialized slick-slider
+
+function displayBestSellingProducts(products)
+{
+    let bestSellingProducts = document.getElementById('best-selling-products');
+    for (let i =0; i< 10; i++) {
+        let product = products[i];
+        bestSellingProducts.innerHTML += `
+        <li><div id="${product.id}">   
+              <img style="width: 150px;" src="${product.image}" alt="hoodie" >
+              <h4>${product.title}</h4>
+              <p class="price">$${product.price}</p>
+              <p class="button"><button class="add-to-car" onclick="myFunction()" >Click to buy</button></p>
+             </div></li>
+            <li>
+        `;
+    }
+    initProductSlider();
+}
+
 
 function onCardLoadNumbers (){
     let productNumbers = localStorage.getItem('cartNumbers');
@@ -415,4 +288,42 @@ displayCart()
 //        }
 //     }
 
-    
+function initProductSlider(){
+    jQuery('.aa-client-brand-slider').slick({
+      dots: false,
+      infinite: false,
+      speed: 300,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+  });
+  }
