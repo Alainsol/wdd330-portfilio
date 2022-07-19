@@ -1,0 +1,51 @@
+main {
+  margin-top: 80px;
+}
+
+.product-card {
+  text-align: center;
+  border: none;
+  padding: 25px;
+  &:hover {
+    background-color: #DACDA9;
+  }
+  img {
+    height: 250px;
+    width: fit-content;
+    max-width: 100%;
+    margin: auto;
+  }
+  button {
+    background-color: #1A395C;
+    border-color: #1A395C;
+    color: #FFF;
+
+    &:hover {
+      background-color: #8192A6;
+      border-color: #8192A6;
+    }
+  }
+}
+.dropdown-menu {
+  width: 300px;
+  background-color: #1A395C;
+
+}
+  img {
+    width: 64px;
+  }
+  button {
+    border: none;
+  }
+  p {
+    margin-top: 15px;
+  }
+
+#cart-count {
+  font-size: 15px;
+  font-weight: 500;
+}
+.navbar-brand,
+navbar-toggler{
+  background-color: #141c2b;
+}
