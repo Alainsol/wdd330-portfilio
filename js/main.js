@@ -42,8 +42,8 @@ const links = [
   url: "week-10/week10.html"
 },
 {
-  label: "Week11 notes",
-  url: "week-11/week11.html"
+  label: "ChallengeII(FINAL)",
+  url: "week-11/index.html"
 },
   ];
   

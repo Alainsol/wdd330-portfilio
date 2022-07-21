@@ -1,5 +1,6 @@
 main {
-  margin-top: 80px;
+  margin-top: 70px;
+  background-color: #E7AD0C;
 }
 
 .product-card {
@@ -9,6 +10,7 @@ main {
 }
 .product-card:hover {
   background-color: #DACDA9;
+  border: 1px solid rgb(235, 235, 235);
 }
 .product-card img {
   height: 250px;
@@ -20,7 +22,7 @@ main {
 }
 .product-card button {
   background-color: #1A395C;
-  border-color: #1A395C;
+  border-color: #E7AD0C;
   color: #FFF;
 }
 .product-card button:hover {
@@ -30,18 +32,38 @@ main {
 
 .dropdown-menu {
   width: 300px;
+  background-color: #1A395C;
 }
-.dropdown-menu img {
+
+img {
   width: 64px;
 }
-.dropdown-menu button {
+
+button {
   border: none;
 }
-.dropdown-menu p {
+
+p {
   margin-top: 15px;
 }
 
 #cart-count {
   font-size: 15px;
   font-weight: 500;
+}
+
+.navbar {
+  background-color: #03254c;
+}
+
+.navbar a {
+  color: #DACDA9;
+}
+
+.navbar a:hover {
+  color: FFF;
+}
+
+table {
+  background-color: #E7AD0C;
 }/*# sourceMappingURL=style.css.map */

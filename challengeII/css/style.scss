@@ -1,5 +1,6 @@
 main {
-  margin-top: 80px;
+  margin-top: 70px;
+  background-color: #E7AD0C;
 }
 
 .product-card {
@@ -8,6 +9,7 @@ main {
   padding: 25px;
   &:hover {
     background-color: #DACDA9;
+    border: 1px solid rgb(235, 235, 235);
   }
   img {
     height: 250px;
@@ -17,7 +19,7 @@ main {
   }
   button {
     background-color: #1A395C;
-    border-color: #1A395C;
+    border-color: #E7AD0C;
     color: #FFF;
 
     &:hover {
@@ -45,7 +47,31 @@ main {
   font-size: 15px;
   font-weight: 500;
 }
+
 .navbar-brand,
 navbar-toggler{
-  background-color: #141c2b;
+  //background-color: #05348c;
 }
+
+.navbar{ 
+  background-color: #03254c;
+}
+
+.navbar a{
+  color: #DACDA9;
+}
+
+.navbar a:hover{
+  color:FFF;
+
+}
+table{
+  background-color: #E7AD0C;
+  
+}
+
+
+//nav.navbar.navbar-expand-lg fixed-top {
+  //background-color: #0b236b;
+//}
+
